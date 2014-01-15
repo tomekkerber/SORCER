@@ -17,7 +17,7 @@
 	</patternset>
 
 	<patternset id="ant.classes">
-		<include name="sorcer/provider/**/*.class" />
+		<include name="sorcer/customService/provider/**/*.class" />
 	</patternset>
 
 	<patternset id="ant.jars">
@@ -42,8 +42,17 @@
 	<!-- No RMI stubs are required for JERI type of providers -->
 	<target name="compile" depends="compileSources" />
 	<target name="jars" depends="customService, copy-run-prv-files" />
-	<target name="customService" depends="custom-service.jar" />
+	<target name="customService" depends="custom-service.jar, custom-service-dl.jar" />
 	<target name="all" depends="prepare, jars" />
+	
+	<target name="custom-service-dl.jar" depends="compile">
+		<classdepandjar jarfile="${sorcer-dl.lib}/custom-service-dl.jar" files="true" debug="false">
+			<classpath refid="project.classpath" />
+			<in name="sorcer.customService.provider" />
+			<topclass name="sorcer.customService.provider.CustomService" />
+			<topclass name="sorcer.customService.provider.ServiceCustomService" />
+		</classdepandjar>
+	</target>
 
 	<target name="custom-service.jar" depends="compile">
 		<classdepandjar jarfile="${sorcer.lib}/custom-service.jar" files="true" debug="false">
@@ -58,9 +67,9 @@
 		</classdepandjar>
 	</target>
 
-	<target name="docs" depends="prepare, compile">
+	<target name="docs" depends="compile">
 		<javadoc packagenames="org.jini.rio.tools.ant.*" maxmemory="100M" sourcepath="${src}" destdir="${docs}/api" Author="true" Version="true" Use="true" windowtitle="TEST" doctitle="TEST" bottom="TEST">
-			<group title="TITLE" packages="sorcer.provider.customService.*" />
+			<group title="TITLE" packages="sorcer.customService.provider*" />
 			<classpath refid="project.classpath" />
 		</javadoc>
 	</target>
