@@ -49,7 +49,6 @@
 		<classdepandjar jarfile="${sorcer-dl.lib}/custom-service-dl.jar" files="true" debug="false">
 			<classpath refid="project.classpath" />
 			<in name="sorcer.customService.provider" />
-			<topclass name="sorcer.customService.provider.CustomService" />
 			<topclass name="sorcer.customService.provider.ServiceCustomService" />
 		</classdepandjar>
 	</target>
@@ -59,7 +58,6 @@
 			<classpath refid="project.classpath" />
 			<in name="sorcer.customService.provider" />
 			<topclass name="sorcer.customService.provider.CustomServiceProvider" />
-			<topclass name="sorcer.customService.provider.CustomService" />
 			<fileset dir="${iGrid.home}/configs">
 				<filename name="sorcer/util/sorcer.env" />
 				<filename name="sorcer/util/data.formats" />
