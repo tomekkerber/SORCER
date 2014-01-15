@@ -1,4 +1,4 @@
-package sorcer.src.sorcer.customService.provider;
+package sorcer.customService.provider;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

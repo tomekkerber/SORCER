@@ -1,12 +1,12 @@
-package sorcer.src.sorcer.customService.provider;
+package sorcer.customService.provider;
 
 import java.rmi.RemoteException;
 
 import com.sun.jini.start.LifeCycle;
 
 import sorcer.service.Context;
-import sorcer.src.sorcer.customService.provider.CustomService;
 import sorcer.core.provider.ServiceTasker; 
+import sorcer.customService.provider.CustomService;
 
 @SuppressWarnings("rawtypes")
 public class CustomServiceProvider extends ServiceTasker implements CustomService, ServiceCustomService{

@@ -21,7 +21,6 @@
 	</patternset>
 
 	<patternset id="ant.jars">
-		<include name="partner-account-cc.jar" />
 		<include name="custom-service.jar" />
 		<include name="custom-service-dl.jar" />
 	</patternset>
@@ -49,7 +48,7 @@
 	<target name="custom-service.jar" depends="compile">
 		<classdepandjar jarfile="${sorcer.lib}/custom-service.jar" files="true" debug="false">
 			<classpath refid="project.classpath" />
-			<in name="sorcer.account.provider" />
+			<in name="sorcer.customService.provider" />
 			<topclass name="sorcer.customService.provider.CustomServiceProvider" />
 			<topclass name="sorcer.customService.provider.CustomService" />
 			<fileset dir="${iGrid.home}/configs">

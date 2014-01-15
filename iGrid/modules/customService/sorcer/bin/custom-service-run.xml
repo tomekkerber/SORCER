@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="run account1" default="boot.acount1" basedir=".">
+<project name="run Custom Service" default="default" basedir=".">
 
 	<!-- system environment variables -->
 	<property environment="env" />
@@ -8,10 +8,10 @@
 
 	<!-- set property values here -->
 	<property name="provider.name" value="custom-service" />
-	<property name="provider.class" value="sorcer.account.provider.CustomServiceProvider" />
+	<property name="provider.class" value="sorcer.customService.provider.CustomServiceProvider" />
 
 	<!-- start provider -->
-	<target name="boot.acount1">
+	<target name="default">
 		<java jar="${lib}/boot.jar" fork="yes">
 			<arg value="${iGrid.home}/configs/boot-prv.config" />
 			<sysproperty key="sorcer.provider.impl" value="${provider.class}" />
