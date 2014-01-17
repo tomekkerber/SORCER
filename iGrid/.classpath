@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="modules/examples/pml/src"/>
+	<classpathentry kind="src" path="modules/examples/fahrenheit/sorcer/src"/>
+	<classpathentry kind="src" path="modules/examples/termometer/sorcer/src"/>
 	<classpathentry kind="src" path="modules/examples/vml/src"/>
 	<classpathentry kind="src" path="modules/examples/account/sorcer/src"/>
 	<classpathentry kind="src" path="netlets"/>
